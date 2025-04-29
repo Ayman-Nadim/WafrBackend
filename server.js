@@ -5,12 +5,13 @@ require('dotenv').config();
 const app = express();
 
 // Middlewares
-app.use(cors());
-app.use(express.json());
+app.use(cors());  // Allow all origins
+app.use(express.json());  // Parse incoming JSON payloads
 
 // Routes
-// const userRoutes = require('./routes/user.routes');
-// app.use('/api/users', userRoutes);
+app.get('/', (req, res) => {
+  res.send("HELLO");  // Respond with "HELLO" when the root route is accessed
+});
 
 // Server
 const PORT = process.env.PORT || 5000;
