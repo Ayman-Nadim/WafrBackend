@@ -26,6 +26,14 @@ pool.connect()
   });
 
 const express = require('express');
+const cors = require('cors');
+// CORS configuration
+const corsOptions = {
+    origin: 'https://wafr-dev.vercel.app', // Allow this origin only
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Add other methods as needed
+    allowedHeaders: ['Content-Type', 'Authorization'], // Add any headers you want to allow
+  };
+  
 const app = express();
 // Middleware pour analyser les requêtes JSON
 app.use(express.json());
